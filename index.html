@@ -131,6 +131,38 @@
             color: #fff;
             margin-top: 20px;
         }
+        /* Mobile menu styles */
+        .menu-icon {
+            display: none;
+            float: right;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+        }
+        @media (max-width: 768px) {
+            header nav {
+                display: none;
+                width: 100%;
+                background-color: #43a047;
+            }
+            header ul {
+                width: 100%;
+                text-align: center;
+            }
+            header li {
+                display: block;
+                padding: 10px 0;
+            }
+            .menu-icon {
+                display: block;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -139,6 +171,11 @@
             <div id="branding">
                 <h1 >Puravive</h1>
             </div>
+            <div class="menu-icon" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>            
             <nav>
                 <ul>
                     <li class="current"><a href="#home">Home</a></li>
@@ -232,3 +269,15 @@
             Information is shared for educational purposes only. You should consult your doctor before acting on any content on this website, especially if you are pregnant, nursing, taking medication, or have a medical condition.</p>
         <p>The display of third-party trademarks and trade names on this site does not necessarily indicate any affiliation or endorsements of our website. If you click a merchant link and buy a product or service on their website, we may be paid a fee by the merchant.</p>
     </footer>
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('header nav');
+            if (nav.style.display === 'block') {
+                nav.style.display = 'none';
+            } else {
+                nav.style.display = 'block';
+            }
+        }
+    </script>
+        
+</body>
